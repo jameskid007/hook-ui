@@ -11,15 +11,39 @@ export interface CalendarProps {
 }
 
 export interface CalendarProps {
+  /**
+   * 值
+   */
   value: Dayjs,
+  /**
+   * 行内样式
+   */
   style?: CSSProperties,
+  /**
+   * 类名
+   */
   className?: string | string[],
-  // 定制日期显示，会完全覆盖日期单元格
+  /**
+   * 定制日期显示，会完全覆盖日期单元格
+   * @param currentDate 当前时间
+   * @returns 
+   */
   dateRender?: (currentDate: Dayjs) => ReactNode
-  // 定制日期单元格，内容会被添加到单元格内
+  /**
+   * 定制日期单元格，内容会被添加到单元格内
+   * @param currentDate 当前时间
+   * @returns 
+   */
   dateInnerContent?: (currentDate: Dayjs) => ReactNode,
-  // 国际化
+  /**
+   * 国际化
+   */
   locale?: string,
+  /**
+   * 修改事件
+   * @param date 时间
+   * @returns 
+   */
   onChange?: (date: Dayjs) => void
 }
 
